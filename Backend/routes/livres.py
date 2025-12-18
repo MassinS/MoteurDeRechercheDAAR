@@ -85,6 +85,7 @@ def get_livre(livre_id: str):
     # Convertir l’_id en string pour le JSON
     livre["_id"] = str(livre["_id"])
     return livre
+
 # 3- recommandations de livres similaires
 @router.get("/{livre_id}/recommendations")
 def get_recommendations(livre_id: str):
@@ -164,3 +165,5 @@ def autocomplete(prefix: str):
         return []
 
     return TRIE_INSTANCE.autocomplete(prefix.lower())
+
+
